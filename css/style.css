@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Dancing Script", cursive;
+}
+
+.card {
+    border: 2px solid black;
+    border-radius: 50px;
+    margin: 50px auto;
+    width: 800px;
+    height: 300px;
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+
+.text{
+    display: flex;
+    gap: 25px;
+}
+
+.tooltip{
+    margin-top: 110px;
+    display: flex;
+    gap: 10px;
+}
+
+.tooltip div {
+    padding: 5px 15px;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
+.tooltip div::before {
+    content: attr(data-social);
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+    box-shadow:  0 5px 10px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+}
+
+.tooltip #left::before {
+    transform: translate(-15px, -60px);
+}
+.tooltip #middle::before {
+    transform: translate(-70px, -60px);
+}
+.tooltip #right::before {
+    transform: translate(-200px, -60px);
+}
+
+.tooltip div::after {
+    content:'';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid black;
+    opacity: 0;
+    transform: translate(-25px, -22px);
+}
+
+.tooltip #left::after {
+    transform: translate(-30px, -22px);
+}
+.tooltip #middle::after {
+    transform: translate(-35px, -22px);
+}
+.tooltip #right::after {
+    transform: translate(-25px, -22px);
+}
+
+
+
+.tooltip div:hover::before {
+    opacity: 1;
+}
+.tooltip div:hover::after {
+    opacity: 1;
+}
